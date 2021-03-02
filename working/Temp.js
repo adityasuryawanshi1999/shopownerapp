@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, View, StyleSheet, Button, Alert } from 'react-native'
 import { ceil } from 'react-native-reanimated'
-
+//deleting this
 
 const Temp = props => {
 
