@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "Rental Portal Shops",
+    "slug": "shopownerapp",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#fc6c7c"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#fc6c7c"
+      },
+      "package": "com.aditya1999.shopownerapp",
+      "config":{
+        "googleSignIn":{
+          "apiKey": "AIzaSyCvYQzI-aKyIhhI9cW0S7-NT1QBNC__SkA",
+          "certificateHash" : "87B92D9B425A1284E6CBF19F433DF29191E8C2C6"
+        }
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
