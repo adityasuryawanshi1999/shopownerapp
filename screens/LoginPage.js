@@ -92,7 +92,8 @@ const LoginPage = props => {
                 </View>
                 <View style={styles.textContainer} >
                     <Card style={{width: '98%', flex: 1, justifyContent: "center", alignContent: 'center', alignItems: 'center'}} >
-                        <Text style={{fontWeight: 'bold', fontSize: 15, textAlign: 'center'}} >Choose any method to get started without any hazzle!</Text>
+                        <Text style={{fontWeight: 'bold', fontSize: 15, textAlign: 'center'}} >Bonjour!</Text>
+                        <Text style={{fontWeight: 'bold', fontSize: 15, textAlign: 'center'}} >Sign in with resgistered shop email!</Text>
                         <SocialIcon style={{width: 200, backgroundColor: Colors.primary}} title='Sign In With Google' button type='google' raised={true} onPress={ signIn } />
                     </Card>
                 </View>
