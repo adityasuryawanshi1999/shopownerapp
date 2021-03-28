@@ -84,6 +84,7 @@ const ProductsPage = props => {
 
     const resetAction = async() => {
       setLoading(true)
+      setName("")
       fetch('https://rental-portal.000webhostapp.com/fetchproducts.php', {
                 method: 'POST',
                 headers: {

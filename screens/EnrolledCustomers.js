@@ -83,6 +83,7 @@ const EnrolledCustomers = props => {
 
     const resetAction = async()=> {
       setLoading(false)
+      setEmail("")
       fetch('https://rental-portal.000webhostapp.com/fetchenrolledcustomers.php', {
                 method: 'POST',
                 headers: {
@@ -164,7 +165,7 @@ const EnrolledCustomers = props => {
                 <Text style={{fontSize: 15, marginBottom: 4, marginLeft: 4}}>Filter by email:</Text>
                 <TextInput style={styles.text} value={email} onChangeText={ text => setEmail(text)} />
                 <View style={styles.buttonWrapper}>
-                  <TouchableOpacity style={styles.buttonContainer} onPress={()=>{}}  >
+                  <TouchableOpacity style={styles.buttonContainer} onPress={resetAction}  >
                       <Text style={styles.greetingText}>Reset</Text>
                   </TouchableOpacity>
                   <TouchableOpacity style={styles.buttonContainer} onPress={searchByEmail}  >
