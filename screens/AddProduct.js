@@ -1,5 +1,5 @@
 import React,{ useState} from 'react'
-import { Text, TextInput, StyleSheet, Alert, ScrollView, Dimensions, TouchableOpacity } from 'react-native'
+import { Text, TextInput, StyleSheet, Alert, ScrollView, Dimensions, TouchableOpacity, ActivityIndicator, View } from 'react-native'
 import Card from '../components/Card'
 import Colors from '../constants/Colors'
 import {Picker, PickerIOS} from '@react-native-picker/picker'
@@ -12,9 +12,11 @@ const AddProduct = props => {
     const [genre, setGenre] = useState('')
     const [description, setDescription] = useState('')
     const [url, setUrl] = useState('')
+    const [laoding, setLoading] = useState(false)  
 
     const insert = async() => {
       console.log(genre)
+      setLoading(true)
         fetch('https://rental-portal.000webhostapp.com/addproducts.php', {
             method: 'POST',
             headers: {
@@ -36,11 +38,22 @@ const AddProduct = props => {
                 .then((responseJson) => {
                   //console.log(query)
                   //console.log(responseJson)
-                  Alert.alert("Record Inserted","Your record for given product has been added to the database.",[{text: "Ok", onPress: ()=> {} }])
+                  setLoading(false)
+                  Alert.alert("Record Inserted","Your record for given product has been added to the database.",[{text: "Okay", onPress: ()=> {} }])
                   props.navigation.navigate('Dashboard')
                 }).catch((error) => {
-                  console.error(error);
+                  Alert.alert("Try Again","Something went wrong, please try again.",[{text: "Okay", onPress: ()=> {} }])
+                  console.log(error);
+                  setLoading(false)
                 }); 
+    }
+
+    if(laoding){
+      return(
+        <View style={styles.activity}>
+          <ActivityIndicator size="large" color="#ccc" />
+        </View>
+      )
     }
 
     return(
@@ -121,6 +134,10 @@ const styles = StyleSheet.create({
         height: 100,
         borderRadius: 10,
         paddingHorizontal: 5
+    },
+    activity:{
+      flex: 1,
+      justifyContent: "center"
     }
 
 })
