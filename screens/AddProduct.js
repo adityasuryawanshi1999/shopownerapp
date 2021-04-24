@@ -77,6 +77,8 @@ const AddProduct = props => {
                     <Picker.Item label="Horror" value="Horror" />
                     <Picker.Item label="Real-Life" value="Real-Life" />
                     <Picker.Item label="Educational" value="Educational" />
+                    <Picker.Item label="Comedy" value="Comedy" />
+                    <Picker.Item label="Drama" value="Drama" />
                 </Picker>
                 <Text>Description:</Text>
                 <TextInput multiline={true} style={styles.description} value={description} onChangeText={ text => setDescription(text)} />
